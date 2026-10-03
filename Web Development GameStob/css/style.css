@@ -1,0 +1,863 @@
+/*
+   GameStoB — Stylesheet
+   Font: 
+   Playfair Display headings 
+   DM Sans body
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+/*warna" */
+:root{
+  --green: #9CA764;
+  --cream: #F1E8C7;
+  --brown: #6B3F2A;
+  --white: #FDFAF2;
+  --text:  #2E2416;
+}
+
+/*
+langsung panggil 
+var(--green)*/
+
+/*reset border box*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*buat font tadi*/
+body{
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--cream);
+}
+
+.page{
+  display: none;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+/*font sm heading*/
+h1, h2, h3, h4{
+  font-family: 'Playfair Display', serif;
+  color: var(--brown);
+  line-height: 1.5;
+}
+
+h1{font-size: 2.5rem;}
+h2{font-size: 2.0rem;}
+h3{font-size: 1.5rem;}
+
+p{
+  color: #5A4030;
+  margin-bottom: 10px;
+}
+
+
+/*frame layout ada container, section, title sama sub*/
+.container{
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section{
+  padding: 60px 0;
+}
+
+.sectiontitle{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sectionsub{
+  text-align: center;
+  color: #9A8070;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+/*header sm navigation bar */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--cream);
+  border-bottom: 1px solid #E8D9A8;
+  box-shadow: 0 2px 5px rgba(107, 63, 42, 0.08);
+}
+
+.navwrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.logo{
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brown);
+}
+
+.logo span{
+  color: var(--green);
+}
+
+/* krn footernya brown, jgn pake brown lg, bedain logo footernya */
+
+.logofoot{
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cream);
+}
+
+.logofoot span{
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+nav ul{
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a{
+  font-size: 1.0rem;
+  font-weight: 500;
+  color: #5A4030;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover{
+  color: var(--green);
+}
+
+.hamburger{
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.hamburger span{
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 4px;
+}
+
+
+/*hero box, dari heading ke tag sama hero page */
+.hero{
+  background: linear-gradient(135deg, #7A8A4E, var(--green));
+  padding: 80px 0;
+}
+
+.hero h1{
+  color: var(--white);
+  margin-bottom: 15px;
+}
+
+.hero p{
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 25px;
+}
+
+.herotag{
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-size: 1.0rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.herobuttons{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pagehero{
+  background: linear-gradient(135deg, var(--green), #C5D18E);
+  padding: 55px 0;
+  text-align: center;
+}
+
+.pagehero h1{
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.pagehero p{
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/*buat buttons*/
+.btn{
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.0rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btnprimary{
+  background: var(--brown);
+  color: var(--white);
+  border-color: var(--brown);
+}
+
+.btnprimary:hover{
+  background: #8B5040;
+}
+
+.btngreen{
+  background: var(--green);
+  color: var(--white);
+  border-color: var(--green);
+}
+
+.btngreen:hover{
+  background: #7A8A4E;
+}
+
+.btnghost{
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btnghost:hover{
+  background: rgba(255, 255, 255, 0.28);
+}
+
+
+/*Banner buat SALE*/
+.salebanner{
+  background: var(--brown);
+  border-radius: 15px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.saletext h2{
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.saletext p{
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 15px;
+}
+
+.salebadge{
+  flex-shrink: 0;
+  background: var(--green);
+  color: var(--white);
+  border-radius: 10px;
+  padding: 15px 25px;
+  text-align: center;
+  line-height: 1;
+}
+
+.salebadge .pct{
+  font-family: 'Playfair Display', serif;
+  font-size: 2.0rem;
+  font-weight: 700;
+  display: block;
+}
+
+.salebadge .off{
+  font-size: 1.0rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+
+
+/*CARD CARDNYA*/
+.cardgrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.card{
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(107, 63, 42, 0.10);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardimg{
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  background: #E8D9A8;
+}
+
+.cardbody{
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cardtitle{
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brown);
+}
+
+.cardmeta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag{
+  display: inline-block;
+  background: #E8D9A8;
+  color: #5A4030;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.taggreen{
+  background: rgba(156, 167, 100, 0.2);
+  color: #7A8A4E;
+}
+
+.carddesc{
+  font-size: 1.0rem;
+  color: #9A8070;
+  margin-top: 5px;
+}
+
+.cardprice{
+  font-weight: 700;
+  color: var(--brown);
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.cardprice .original{
+  font-size: 1.0rem;
+  font-weight: 400;
+  color: #9A8070;
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+
+.card .btn{
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 10px;
+  font-size: 1.0rem;
+}
+
+
+
+/*ABOUT PAGE APA YG DIPAKE*/
+.aboutgrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.aboutimg{
+  width: 100%;
+  border-radius: 15px;
+  min-height: 300px;
+  background: #E8D9A8;
+  object-fit: cover;
+}
+
+
+
+/*LOCATIONS PAGE APA YG DIPAKE */
+.locationgrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.locationcard{
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(107, 63, 42, 0.10);
+}
+
+.locationcardimg{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #E8D9A8;
+}
+
+.locationcardbody{
+  padding: 20px;
+}
+
+.locationcardbody h3{
+  margin-bottom: 5px;
+}
+
+.locationcardbody p{
+  font-size: 1.0rem;
+  margin-bottom: 10px;
+}
+
+.hours{
+  background: var(--cream);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.0rem;
+  color: #9A8070;
+}
+
+
+/*PURCHASE FORMNYA */
+.purchasewrapper{
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.formcard{
+  background: var(--white);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(107, 63, 42, 0.10);
+}
+
+.formcard h2{
+  margin-bottom: 5px;
+}
+
+.formcard > p{
+  margin-bottom: 25px;
+  font-size: 1.0rem;
+  color: #9A8070;
+}
+
+.formsectionlabel{
+  font-size: 1.0rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--green);
+  margin-bottom: 15px;
+}
+
+.formgroup{
+  margin-bottom: 20px;
+}
+
+.formgroup label{
+  display: block;
+  font-size: 1.0rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.required{
+  color: #C0392B;
+  margin-left: 5px;
+}
+
+.formcontrol{
+  width: 100%;
+  padding: 10px 15px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.0rem;
+  color: var(--text);
+  background: var(--cream);
+  border: 1.5px solid #E8D9A8;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.formcontrol:focus{
+  border-color: var(--green);
+  background: var(--white);
+}
+
+.formcontrol.error{
+  border-color: #C0392B;
+}
+
+.formcontrol.valid{
+  border-color: var(--green);
+}
+
+.errormsg{
+  display: none;
+  font-size: 1.0rem;
+  color: #C0392B;
+  margin-top: 5px;
+}
+
+.errormsg.show{
+  display: block;
+}
+
+.formrow{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+select.formcontrol{
+  cursor: pointer;
+}
+
+.radiogroup, .checkboxgroup{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radioitem, .checkboxitem{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.0rem;
+  color: #5A4030;
+  cursor: pointer;
+}
+
+input[type="checkbox"], input[type="radio"]{
+  width: 15px;
+  height: 15px;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+.formdivider{
+  border: none;
+  border-top: 1px solid #E8D9A8;
+  margin: 25px 0;
+}
+
+.cardicons{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cardicon{
+  width: 45px;
+  height: 30px;
+  border-radius: 5px;
+  background: var(--cream);
+  border: 1px solid #E8D9A8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.50rem;
+  font-weight: 700;
+  color: #5A4030;
+}
+
+.cardinputmt{
+  margin-top: 10px;
+}
+
+.termswrap{
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.termswrap input{
+  margin-top: 5px;
+}
+
+.termslink{
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.submitbtn{
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+
+
+/*SEMUA FOOTER*/
+footer{
+  background: var(--brown);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 50px 0 25px;
+  margin-top: 80px;
+}
+
+.footergrid{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 35px;
+  margin-bottom: 35px;
+}
+
+.footerbrand p{
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.0rem;
+  margin-top: 10px;
+}
+
+.footercol h4{
+  color: var(--white);
+  font-size: 0.1rem;
+  letter-spacing: 1.0px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.footercol ul li{
+  margin-bottom: 10px;
+}
+
+.footercol ul li a{
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.0rem;
+  transition: color 0.2s;
+}
+
+.footercol ul li a:hover{
+  color: #C5D18E;
+}
+
+.footerbottom{
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.0rem;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+/*BUAT TABLET (≤ 1024px) */
+@media screen and (max-width: 1024px){
+  .footergrid{
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .aboutgrid{
+    grid-template-columns: 1fr;
+  }
+
+  .salebanner{
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 25px;
+  }
+
+  .cardgrid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*BUAT MOBILE (≤ 768px) */
+@media screen and (max-width: 768px){
+  .section{
+    padding: 40px 0;
+  }
+
+  nav ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #E8D9A8;
+    box-shadow: 0 5px 15px rgba(107, 63, 42, 0.08);
+  }
+
+  nav ul.open{
+    display: flex;
+  }
+
+  nav ul li a{
+    display: block;
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+
+  .hamburger{
+    display: flex;
+  }
+
+  .hero{
+    padding: 50px 0;
+  }
+
+  h1 {font-size: 2.0rem;}
+  h2 {font-size: 1.5rem;}
+
+  .cardgrid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .salebanner{
+    padding: 25px 20px;
+  }
+
+  .formcard{
+    padding: 25px 20px;
+  }
+
+  .formrow{
+    grid-template-columns: 1fr;
+  }
+
+  .locationgrid{
+    grid-template-columns: 1fr;
+  }
+
+  .footergrid{
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footerbottom{
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .aboutgrid{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/*HOVER ANIMATION BUAT CARD*/
+.card{
+  transition: transform 0.2s;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+}
+
+.locationcard{
+  transition: transform 0.2s;
+}
+
+.locationcard:hover{
+  transform: translateY(-4px);
+}
+
+
+
+/*KEY CHARACTERISTICS DI ABOUT */
+.characteristicsgrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.charcard{
+  background: var(--white);
+  border-radius: 10px;
+  padding: 25px 20px;
+  box-shadow: 0 5px 15px rgba(107, 63, 42, 0.10);
+  text-align: center;
+}
+
+.charicon{
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/*karakteristik tp buat tablet sm phone*/
+@media screen and (max-width: 768px){
+  .characteristicsgrid{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .genreselect{
+    max-width: 100%;
+  }
+}
+
+/*SEARCH BAR DI CATALOG GAMES */
+.searchbar{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.genreselect{
+  max-width: 200px;
+}
+
+/*kalo katalog kosong */
+.catalogempty{
+  display: none;
+  text-align: center;
+  padding: 60px 0;
+}
